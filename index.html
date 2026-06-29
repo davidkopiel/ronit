@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>רונית קופליס — מיילדת ומדריכת דולות</title>
+  <meta name="description" content="הכשרת דולות מקצועית עם רונית קופליס — מיילדת עם 40 שנות ניסיון ו-24 שנות הכשרת דולות." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Heebo:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FAF7F2;
+      --text: #2F2A26;
+      --accent: #A56A56;
+      --secondary: #8A9A7B;
+      --white: #FFFFFF;
+      --text-light: #6B6259;
+      --border-line: rgba(47,42,38,0.1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      direction: rtl;
+      font-family: 'Heebo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .display { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      border-bottom: 0.5px solid var(--border-line);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      font-size: 0.82rem;
+      color: var(--accent);
+      border: 0.5px solid var(--accent);
+      padding: 0.5rem 1.3rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 400;
+      transition: all 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--accent); color: var(--white); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 88vh;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem 5rem 5rem;
+      gap: 2rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .badge-item {
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--accent);
+      border: 0.5px solid var(--accent);
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      letter-spacing: 0.04em;
+      background: rgba(165,106,86,0.04);
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.6rem;
+      font-weight: 300;
+      line-height: 1.22;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-light);
+      max-width: 40ch;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.88rem;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 400;
+      padding: 1rem 2.2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      align-self: flex-start;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover { background: #8d5645; transform: translateY(-1px); }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 400;
+      padding: 1rem 2.2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 0.5px solid rgba(47,42,38,0.4);
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-image {
+      background: linear-gradient(160deg, #E8DDD4 0%, #D4C5B8 50%, #C4B5A8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      min-height: 500px;
+      /* 
+        החלף את הרקע עם:
+        background: url('ronit-photo.jpg') center/cover no-repeat;
+      */
+    }
+
+    .photo-placeholder-icon {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: rgba(165,106,86,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo-placeholder-caption {
+      font-size: 0.8rem;
+      color: #8A7568;
+      font-weight: 300;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 6rem 4rem; }
+
+    .section-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .divider { height: 0.5px; background: var(--border-line); }
+
+    /* ── EMOTIONAL ── */
+    .emotional {
+      background: var(--white);
+      border-top: 0.5px solid var(--border-line);
+      border-bottom: 0.5px solid var(--border-line);
+    }
+
+    .emotional-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text);
+      margin-bottom: 3.5rem;
+      line-height: 1.2;
+    }
+
+    .statements {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .statement-item {
+      padding: 2rem 2.5rem 2rem 0;
+      border-bottom: 0.5px solid var(--border-line);
+    }
+
+    .statement-item:nth-child(odd) {
+      border-left: 0.5px solid var(--border-line);
+      padding-right: 0;
+      padding-left: 2.5rem;
+    }
+
+    .statement-item:nth-child(3),
+    .statement-item:nth-child(4) {
+      border-bottom: none;
+      padding-top: 2rem;
+    }
+
+    .statement-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .statement-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--bg); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-image-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(180deg, #E0D5CC 0%, #C8BDB4 100%);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.8rem;
+      /*
+        החלף עם:
+        background: url('ronit-about.jpg') center/cover no-repeat;
+      */
+    }
+
+    .about-accent-line {
+      width: 2px;
+      height: 60px;
+      background: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .about-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      line-height: 1.25;
+      margin-bottom: 2rem;
+      color: var(--text);
+    }
+
+    .about-headline em { font-style: italic; color: var(--accent); }
+
+    .about-text {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 2;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-signature {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--accent);
+      margin-top: 2rem;
+    }
+
+    /* ── WHY ── */
+    .why {
+      background: var(--white);
+      border-top: 0.5px solid var(--border-line);
+    }
+
+    .why-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      margin-bottom: 3.5rem;
+      color: var(--text);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--border-line);
+      gap: 0.5px;
+      border: 0.5px solid var(--border-line);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .card {
+      background: var(--bg);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .card-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ── BECOMING ── */
+    .becoming {
+      background: var(--bg);
+      border-top: 0.5px solid var(--border-line);
+    }
+
+    .becoming-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .becoming-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--text);
+      position: sticky;
+      top: 6rem;
+    }
+
+    .becoming-headline em { font-style: italic; color: var(--accent); }
+
+    .becoming-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem 3rem;
+    }
+
+    .becoming-item-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 0.5px solid var(--border-line);
+    }
+
+    .becoming-item-desc {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-top: 0.8rem;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: var(--white);
+      border-top: 0.5px solid var(--border-line);
+    }
+
+    .testimonials-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 3rem;
+      color: var(--text);
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .testi-card {
+      background: var(--bg);
+      border-radius: 4px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      border: 0.5px solid var(--border-line);
+    }
+
+    .testi-quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      color: var(--accent);
+      line-height: 0.5;
+      opacity: 0.3;
+    }
+
+    .testi-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testi-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #C8BDB4, #B0A498);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #6B5E54;
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .testi-role {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--text-light);
+      margin-top: 0.15rem;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--text);
+      text-align: center;
+      padding: 9rem 4rem;
+    }
+
+    .final-cta .eyebrow { color: #D4A090; opacity: 0.9; }
+
+    .final-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 300;
+      line-height: 1.3;
+      color: var(--white);
+      max-width: 30ch;
+      margin: 0 auto 1.5rem;
+    }
+
+    .final-headline em { font-style: italic; color: #D4A090; }
+
+    .final-sub {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 3rem;
+    }
+
+    .btn-light {
+      display: inline-block;
+      background: var(--white);
+      color: var(--text);
+      font-size: 0.9rem;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 500;
+      padding: 1.1rem 2.8rem;
+      border-radius: 12px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: all 0.2s;
+    }
+
+    .btn-light:hover { background: #F0EBE5; transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg);
+      border-top: 0.5px solid var(--border-line);
+      padding: 2.5rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .footer-text {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-weight: 300;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-image { min-height: 320px; order: -1; }
+      .hero-content { padding: 3rem 1.5rem; }
+      .hero-headline { font-size: 2.6rem; }
+
+      section { padding: 4rem 1.5rem; }
+
+      .statements { grid-template-columns: 1fr; }
+      .statement-item:nth-child(odd) { border-left: none; padding-left: 0; padding-right: 0; }
+      .statement-item { border-bottom: 0.5px solid var(--border-line); padding: 1.5rem 0; }
+      .statement-item:nth-child(3), .statement-item:nth-child(4) { border-bottom: none; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-image-placeholder { aspect-ratio: 4/3; }
+
+      .cards-grid { grid-template-columns: 1fr 1fr; }
+
+      .becoming-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .becoming-headline { position: static; font-size: 2.2rem; }
+      .becoming-items { grid-template-columns: 1fr; }
+
+      .testi-grid { grid-template-columns: 1fr; }
+
+      .final-cta { padding: 6rem 1.5rem; }
+      .final-headline { font-size: 2.2rem; }
+
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    }
+
+    @media (max-width: 560px) {
+      .hero-headline { font-size: 2rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .emotional-headline { font-size: 2rem; }
+      .about-headline { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">רונית קופליס</a>
+    <ul class="nav-links">
+      <li><a href="#about">אודות</a></li>
+      <li><a href="#why">למה ללמוד כאן</a></li>
+      <li><a href="#testimonials">המלצות</a></li>
+      <li><a href="#contact">צרי קשר</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">לפרטים על ההכשרה</a>
+  </nav>
+
+  <!-- SECTION 1: HERO -->
+  <section style="padding:0;">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-item">מיילדת · 40 שנה</span>
+          <span class="badge-item">מכשירת דולות · 24 שנה</span>
+        </div>
+        <h1 class="hero-headline">
+          יש נשים שלא <em>בוחרות</em><br>מקצוע.<br>הן בוחרות <em>ייעוד</em>.
+        </h1>
+        <p class="hero-sub">הכשרת דולות מקצועית המשלבת מעל 40 שנות ניסיון קליני עם ליווי רגשי עמוק — ומכינה נשים להיות מלוות לידה בטוחות, מקצועיות ומחוברות.</p>
+        <a href="#contact" class="btn-primary">לפרטים על ההכשרה הקרובה</a>
+      </div>
+      <div class="hero-image">
+        <!-- החלפי את התוכן של הdiv הזה עם תמונה אמיתית:
+             style="background: url('ronit-hero.jpg') center/cover no-repeat;" -->
+        <div class="photo-placeholder-icon">
+          <svg width="40" height="40" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" stroke="#A56A56" stroke-width="1.2"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#A56A56" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="photo-placeholder-caption">הוסיפי כאן תמונת Hero<br>של רונית עם תלמידות / נשים</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION 2: EMOTIONAL -->
+  <section class="emotional">
+    <div class="section-inner">
+      <span class="eyebrow">הרגשה שמכירה לך</span>
+      <h2 class="emotional-headline">אולי גם את מרגישה את זה...</h2>
+      <div class="statements">
+        <div class="statement-item">
+          <div class="statement-dot"></div>
+          <p class="statement-text">את נמשכת לעולם הלידה.</p>
+        </div>
+        <div class="statement-item">
+          <div class="statement-dot"></div>
+          <p class="statement-text">את רוצה עבודה עם משמעות אמיתית.</p>
+        </div>
+        <div class="statement-item">
+          <div class="statement-dot"></div>
+          <p class="statement-text">את רוצה ביטחון מקצועי עמוק.</p>
+        </div>
+        <div class="statement-item">
+          <div class="statement-dot"></div>
+          <p class="statement-text">את רוצה ללוות נשים ברגעי החיים הגדולים.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner" style="max-width:1040px;">
+      <div class="about-grid">
+        <div>
+          <div class="about-image-placeholder" aria-label="תמונה אישית של רונית קופליס">
+            <!-- החלפי עם: style="background: url('ronit-about.jpg') center/cover no-repeat;" -->
+            <svg width="48" height="48" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="7" r="4.5" stroke="#A56A56" stroke-width="1"/>
+              <path d="M3 21c0-5 4-9 9-9s9 4 9 9" stroke="#A56A56" stroke-width="1" stroke-linecap="round"/>
+            </svg>
+            <span class="photo-placeholder-caption" style="font-family:'Heebo',sans-serif;">תמונה אישית של רונית</span>
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow">אודות רונית</span>
+          <div class="about-accent-line"></div>
+          <h2 class="about-headline">מיילדת שגילתה<br>שהלב שלה <em>בהוראה</em>.</h2>
+          <p class="about-text">לפני 40 שנה נכנסתי לחדר לידה בפעם הראשונה. לא ידעתי שאותו רגע יעצב את כל חיי. הייתי מיילדת, אם, ואישה שחוותה לידה בגופה ובנשמתה — ומשם הגיעה ההבנה שלמדתי בכל הגוף: לידה היא לא אירוע רפואי. היא מעבר.</p>
+          <p class="about-text">לפני 24 שנה התחלתי להכשיר דולות. לא כי "החלטתי לפתוח קורס" — אלא כי נשים הגיעו אליי, ואני לא יכולתי לא לשתף את מה שצברתי. מאז ליוויתי מאות נשים לתוך המקצוע הזה, וכל אחת מהן עדיין נמצאת בלב.</p>
+          <p class="about-text">ההכשרה שאני מעבירה היא לא "חומר ללמוד". היא שינוי זהות. את נכנסת כאישה, ויוצאת כמי שיודעת ללוות.</p>
+          <div class="about-signature">— רונית קופליס</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: WHY -->
+  <section class="why" id="why">
+    <div class="section-inner" style="max-width:1040px;">
+      <span class="eyebrow">למה ללמוד כאן</span>
+      <h2 class="why-headline">ניסיון שמדוד בשנים, לא בשעות.</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-number">40</div>
+          <div class="card-title">שנות ניסיון קליני</div>
+          <div class="card-desc">מיילדת בפועל, לא רק מרצה. כל מה שמלמדת עברתי בגוף ובנשמה.</div>
+        </div>
+        <div class="card">
+          <div class="card-number">24</div>
+          <div class="card-title">שנות הכשרת דולות</div>
+          <div class="card-desc">מאות בוגרות עובדות היום בשטח. זו לא תיאוריה — זו מסורת.</div>
+        </div>
+        <div class="card">
+          <div class="card-number" style="font-size:2rem;">אישי</div>
+          <div class="card-title">ליווי אישי בכל שלב</div>
+          <div class="card-desc">אין כאן "הרצאות ולכי לשלום". יש כאן נוכחות, מנטורינג, ודלת פתוחה.</div>
+        </div>
+        <div class="card">
+          <div class="card-number" style="font-size:2rem;">שלם</div>
+          <div class="card-title">מקצועי ורגשי יחד</div>
+          <div class="card-desc">לידה היא גוף ונפש. ההכשרה כאן מכינה אותך לשניהם.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: BECOMING -->
+  <section class="becoming">
+    <div class="section-inner" style="max-width:1040px;">
+      <span class="eyebrow">מה תהיי</span>
+      <div class="becoming-grid">
+        <div>
+          <h2 class="becoming-headline">לא מה <em>תלמדי</em>.<br>מי <em>תהיי</em>.</h2>
+        </div>
+        <div class="becoming-items">
+          <div>
+            <div class="becoming-item-title">ביטחון מקצועי</div>
+            <div class="becoming-item-desc">את יוצאת עם הכלים, הידע, והנוכחות לעמוד ליד אישה בלידה ולדעת שאת שם.</div>
+          </div>
+          <div>
+            <div class="becoming-item-title">זהות מקצועית</div>
+            <div class="becoming-item-desc">את לא רק "עושה קורס" — את הופכת לדולה. יש הבדל. וכאן את תרגישי אותו.</div>
+          </div>
+          <div>
+            <div class="becoming-item-title">קהילה ואחיות</div>
+            <div class="becoming-item-desc">את נכנסת לקבוצת נשים שמבינות אותך. הקהילה הזו ממשיכה הרבה אחרי ההכשרה.</div>
+          </div>
+          <div>
+            <div class="becoming-item-title">קריירה עם משמעות</div>
+            <div class="becoming-item-desc">עבודה שאת קמה אליה בבוקר. שמשפיעה על חיים. שנמדדת בחיוכים, לא רק בכסף.</div>
+          </div>
+          <div>
+            <div class="becoming-item-title">ליווי מלא · הריון, לידה, אחרי</div>
+            <div class="becoming-item-desc">את מוכנה לכל שלב. מהרגע שהאישה נכנסת להריון ועד שהיא מוצאת את עצמה כאמא.</div>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:center;">
+            <a href="#contact" class="btn-primary" style="width:100%; text-align:center;">אני רוצה לדעת עוד</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner" style="max-width:1040px;">
+      <span class="eyebrow">מה אומרות הבוגרות</span>
+      <h2 class="testimonials-headline">בנשים שלמדו כאן.</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-quote-mark">"</div>
+          <p class="testi-text">רונית לא רק לימדה אותי להיות דולה. היא לימדה אותי להיות נוכחת. זה הדבר הכי גדול שקיבלתי מההכשרה הזאת.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">ש.מ</div>
+            <div>
+              <div class="testi-name">שירה מגן</div>
+              <div class="testi-role">דולה, בוגרת 2021</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote-mark">"</div>
+          <p class="testi-text">ניסיתי קורסים אחרים. שום דבר לא מתקרב לרמה הזאת. הידע של רונית הוא לא ספרים — הוא חיים. והיא מעבירה אותו בצורה שנוגעת ממש בלב.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">נ.ל</div>
+            <div>
+              <div class="testi-name">נעמה לוי</div>
+              <div class="testi-role">דולה, בוגרת 2022</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote-mark">"</div>
+          <p class="testi-text">הייתי מלאת ספקות לפני ההכשרה. היום אני מלווה לידות ויודעת שזה מה שנועדתי לעשות. רונית נתנה לי את הביטחון הזה.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">מ.כ</div>
+            <div>
+              <div class="testi-name">מיה כהן</div>
+              <div class="testi-role">דולה, בוגרת 2023</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: FINAL CTA -->
+  <section class="final-cta" id="contact">
+    <span class="eyebrow">הצעד הראשון</span>
+    <h2 class="final-headline">אם הלב שלך כבר<br>בעולם הלידה —<br><em>אולי מצאת את מקומך</em>.</h2>
+    <p class="final-sub">שיחה אישית. ללא התחייבות. רק אנחנו ושאלה אחת: מה את מחפשת?</p>
+    <a href="mailto:ronit@example.com" class="btn-light">קביעת שיחה אישית עם רונית</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">רונית קופליס</span>
+    <span class="footer-text">מיילדת · מדריכת דולות · מנחת נשים</span>
+    <span class="footer-text">© 2025 רונית קופליס. כל הזכויות שמורות.</span>
+  </footer>
+
+</body>
+</html>
