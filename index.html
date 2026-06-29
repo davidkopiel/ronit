@@ -33,14 +33,12 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .display { font-family: 'Cormorant Garamond', serif; font-weight: 300; }
-
     /* ── NAV ── */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 4rem;
+      padding: 1.4rem 4rem;
       border-bottom: 0.5px solid var(--border-line);
       background: var(--bg);
       position: sticky;
@@ -160,54 +158,17 @@
 
     .btn-primary:hover { background: #8d5645; transform: translateY(-1px); }
 
-    .btn-secondary {
-      display: inline-block;
-      background: transparent;
-      color: var(--text);
-      font-size: 0.88rem;
-      font-family: 'Heebo', sans-serif;
-      font-weight: 400;
-      padding: 1rem 2.2rem;
-      border-radius: 12px;
-      text-decoration: none;
-      border: 0.5px solid rgba(47,42,38,0.4);
-      cursor: pointer;
-      letter-spacing: 0.02em;
-      transition: all 0.2s;
-    }
-
-    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-
     .hero-image {
-      background: linear-gradient(160deg, #E8DDD4 0%, #D4C5B8 50%, #C4B5A8 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 1rem;
-      min-height: 500px;
-      /* 
-        החלף את הרקע עם:
-        background: url('ronit-photo.jpg') center/cover no-repeat;
-      */
+      position: relative;
+      overflow: hidden;
     }
 
-    .photo-placeholder-icon {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: rgba(165,106,86,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .photo-placeholder-caption {
-      font-size: 0.8rem;
-      color: #8A7568;
-      font-weight: 300;
-      text-align: center;
-      line-height: 1.6;
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
     /* ── SECTION BASE ── */
@@ -273,7 +234,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--accent);
+      background: var(--secondary);
       margin-bottom: 1rem;
     }
 
@@ -295,20 +256,17 @@
       align-items: center;
     }
 
-    .about-image-placeholder {
+    .about-image-wrap {
+      position: relative;
+    }
+
+    .about-image-wrap img {
       width: 100%;
       aspect-ratio: 3/4;
-      background: linear-gradient(180deg, #E0D5CC 0%, #C8BDB4 100%);
+      object-fit: cover;
+      object-position: center top;
       border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 0.8rem;
-      /*
-        החלף עם:
-        background: url('ronit-about.jpg') center/cover no-repeat;
-      */
+      display: block;
     }
 
     .about-accent-line {
@@ -361,7 +319,7 @@
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       background: var(--border-line);
       gap: 0.5px;
       border: 0.5px solid var(--border-line);
@@ -374,12 +332,12 @@
       padding: 2.5rem 2rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
     .card-number {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 300;
       color: var(--accent);
       line-height: 1;
@@ -424,20 +382,43 @@
 
     .becoming-headline em { font-style: italic; color: var(--accent); }
 
-    .becoming-items {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem 3rem;
+    .becoming-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .becoming-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.4rem 0;
+      border-bottom: 0.5px solid var(--border-line);
+    }
+
+    .becoming-list li:last-child { border-bottom: none; }
+
+    .becoming-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--secondary);
+      flex-shrink: 0;
+      margin-top: 0.55rem;
+    }
+
+    .becoming-item-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
     }
 
     .becoming-item-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 400;
       color: var(--text);
-      margin-bottom: 0.5rem;
-      padding-bottom: 0.8rem;
-      border-bottom: 0.5px solid var(--border-line);
     }
 
     .becoming-item-desc {
@@ -445,7 +426,6 @@
       font-weight: 300;
       color: var(--text-light);
       line-height: 1.7;
-      margin-top: 0.8rem;
     }
 
     /* ── TESTIMONIALS ── */
@@ -489,10 +469,10 @@
 
     .testi-text {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       font-style: italic;
       font-weight: 400;
-      line-height: 1.7;
+      line-height: 1.75;
       color: var(--text);
       flex: 1;
     }
@@ -507,14 +487,15 @@
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      background: linear-gradient(145deg, #C8BDB4, #B0A498);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #6B5E54;
+      overflow: hidden;
       flex-shrink: 0;
+      background: #D4C5B8;
+    }
+
+    .testi-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .testi-name {
@@ -605,39 +586,27 @@
     @media (max-width: 900px) {
       nav { padding: 1.2rem 1.5rem; }
       .nav-links { display: none; }
-
       .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-image { min-height: 320px; order: -1; }
+      .hero-image { min-height: 340px; order: -1; }
       .hero-content { padding: 3rem 1.5rem; }
       .hero-headline { font-size: 2.6rem; }
-
       section { padding: 4rem 1.5rem; }
-
       .statements { grid-template-columns: 1fr; }
       .statement-item:nth-child(odd) { border-left: none; padding-left: 0; padding-right: 0; }
       .statement-item { border-bottom: 0.5px solid var(--border-line); padding: 1.5rem 0; }
       .statement-item:nth-child(3), .statement-item:nth-child(4) { border-bottom: none; }
-
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .about-image-placeholder { aspect-ratio: 4/3; }
-
-      .cards-grid { grid-template-columns: 1fr 1fr; }
-
+      .cards-grid { grid-template-columns: 1fr; }
       .becoming-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .becoming-headline { position: static; font-size: 2.2rem; }
-      .becoming-items { grid-template-columns: 1fr; }
-
       .testi-grid { grid-template-columns: 1fr; }
-
       .final-cta { padding: 6rem 1.5rem; }
       .final-headline { font-size: 2.2rem; }
-
       footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
     }
 
     @media (max-width: 560px) {
       .hero-headline { font-size: 2rem; }
-      .cards-grid { grid-template-columns: 1fr; }
       .emotional-headline { font-size: 2rem; }
       .about-headline { font-size: 2rem; }
     }
@@ -654,7 +623,7 @@
       <li><a href="#testimonials">המלצות</a></li>
       <li><a href="#contact">צרי קשר</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">לפרטים על ההכשרה</a>
+    <a href="https://wa.me/972528491616" target="_blank" class="nav-cta">לפרטים על ההכשרה</a>
   </nav>
 
   <!-- SECTION 1: HERO -->
@@ -669,18 +638,14 @@
           יש נשים שלא <em>בוחרות</em><br>מקצוע.<br>הן בוחרות <em>ייעוד</em>.
         </h1>
         <p class="hero-sub">הכשרת דולות מקצועית המשלבת מעל 40 שנות ניסיון קליני עם ליווי רגשי עמוק — ומכינה נשים להיות מלוות לידה בטוחות, מקצועיות ומחוברות.</p>
-        <a href="#contact" class="btn-primary">לפרטים על ההכשרה הקרובה</a>
+        <a href="https://wa.me/972528491616" target="_blank" class="btn-primary">לפרטים על ההכשרה הקרובה</a>
       </div>
       <div class="hero-image">
-        <!-- החלפי את התוכן של הdiv הזה עם תמונה אמיתית:
-             style="background: url('ronit-hero.jpg') center/cover no-repeat;" -->
-        <div class="photo-placeholder-icon">
-          <svg width="40" height="40" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="8" r="4" stroke="#A56A56" stroke-width="1.2"/>
-            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#A56A56" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <span class="photo-placeholder-caption">הוסיפי כאן תמונת Hero<br>של רונית עם תלמידות / נשים</span>
+        <img
+          src="https://ronitkopelis.co.il/wp-content/uploads/2023/07/רונית-קופליס-המקום-למקצועות-הלידה-1.jpg"
+          alt="רונית קופליס עם תלמידות"
+          loading="eager"
+        />
       </div>
     </div>
   </section>
@@ -717,15 +682,12 @@
   <section class="about" id="about">
     <div class="section-inner" style="max-width:1040px;">
       <div class="about-grid">
-        <div>
-          <div class="about-image-placeholder" aria-label="תמונה אישית של רונית קופליס">
-            <!-- החלפי עם: style="background: url('ronit-about.jpg') center/cover no-repeat;" -->
-            <svg width="48" height="48" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="7" r="4.5" stroke="#A56A56" stroke-width="1"/>
-              <path d="M3 21c0-5 4-9 9-9s9 4 9 9" stroke="#A56A56" stroke-width="1" stroke-linecap="round"/>
-            </svg>
-            <span class="photo-placeholder-caption" style="font-family:'Heebo',sans-serif;">תמונה אישית של רונית</span>
-          </div>
+        <div class="about-image-wrap">
+          <img
+            src="https://ronitkopelis.co.il/wp-content/uploads/2023/05/IMG_9068_L-scaled.jpg"
+            alt="רונית קופליס — מיילדת ומדריכת דולות"
+            loading="lazy"
+          />
         </div>
         <div>
           <span class="eyebrow">אודות רונית</span>
@@ -757,12 +719,12 @@
           <div class="card-desc">מאות בוגרות עובדות היום בשטח. זו לא תיאוריה — זו מסורת.</div>
         </div>
         <div class="card">
-          <div class="card-number" style="font-size:2rem;">אישי</div>
+          <div class="card-number" style="font-size:2rem; line-height:1.4;">אישי</div>
           <div class="card-title">ליווי אישי בכל שלב</div>
           <div class="card-desc">אין כאן "הרצאות ולכי לשלום". יש כאן נוכחות, מנטורינג, ודלת פתוחה.</div>
         </div>
         <div class="card">
-          <div class="card-number" style="font-size:2rem;">שלם</div>
+          <div class="card-number" style="font-size:2rem; line-height:1.4;">שלם</div>
           <div class="card-title">מקצועי ורגשי יחד</div>
           <div class="card-desc">לידה היא גוף ונפש. ההכשרה כאן מכינה אותך לשניהם.</div>
         </div>
@@ -778,31 +740,43 @@
         <div>
           <h2 class="becoming-headline">לא מה <em>תלמדי</em>.<br>מי <em>תהיי</em>.</h2>
         </div>
-        <div class="becoming-items">
-          <div>
-            <div class="becoming-item-title">ביטחון מקצועי</div>
-            <div class="becoming-item-desc">את יוצאת עם הכלים, הידע, והנוכחות לעמוד ליד אישה בלידה ולדעת שאת שם.</div>
-          </div>
-          <div>
-            <div class="becoming-item-title">זהות מקצועית</div>
-            <div class="becoming-item-desc">את לא רק "עושה קורס" — את הופכת לדולה. יש הבדל. וכאן את תרגישי אותו.</div>
-          </div>
-          <div>
-            <div class="becoming-item-title">קהילה ואחיות</div>
-            <div class="becoming-item-desc">את נכנסת לקבוצת נשים שמבינות אותך. הקהילה הזו ממשיכה הרבה אחרי ההכשרה.</div>
-          </div>
-          <div>
-            <div class="becoming-item-title">קריירה עם משמעות</div>
-            <div class="becoming-item-desc">עבודה שאת קמה אליה בבוקר. שמשפיעה על חיים. שנמדדת בחיוכים, לא רק בכסף.</div>
-          </div>
-          <div>
-            <div class="becoming-item-title">ליווי מלא · הריון, לידה, אחרי</div>
-            <div class="becoming-item-desc">את מוכנה לכל שלב. מהרגע שהאישה נכנסת להריון ועד שהיא מוצאת את עצמה כאמא.</div>
-          </div>
-          <div style="display:flex; align-items:center; justify-content:center;">
-            <a href="#contact" class="btn-primary" style="width:100%; text-align:center;">אני רוצה לדעת עוד</a>
-          </div>
-        </div>
+        <ul class="becoming-list">
+          <li>
+            <div class="becoming-dot"></div>
+            <div class="becoming-item-text">
+              <span class="becoming-item-title">ביטחון מקצועי</span>
+              <span class="becoming-item-desc">את יוצאת עם הכלים, הידע, והנוכחות לעמוד ליד אישה בלידה ולדעת שאת שם.</span>
+            </div>
+          </li>
+          <li>
+            <div class="becoming-dot"></div>
+            <div class="becoming-item-text">
+              <span class="becoming-item-title">זהות מקצועית</span>
+              <span class="becoming-item-desc">את לא רק "עושה קורס" — את הופכת לדולה. יש הבדל. וכאן את תרגישי אותו.</span>
+            </div>
+          </li>
+          <li>
+            <div class="becoming-dot"></div>
+            <div class="becoming-item-text">
+              <span class="becoming-item-title">קהילה ואחיות</span>
+              <span class="becoming-item-desc">את נכנסת לקבוצת נשים שמבינות אותך. הקהילה הזו ממשיכה הרבה אחרי ההכשרה.</span>
+            </div>
+          </li>
+          <li>
+            <div class="becoming-dot"></div>
+            <div class="becoming-item-text">
+              <span class="becoming-item-title">קריירה עם משמעות</span>
+              <span class="becoming-item-desc">עבודה שאת קמה אליה בבוקר. שמשפיעה על חיים. שנמדדת בחיוכים, לא רק בכסף.</span>
+            </div>
+          </li>
+          <li>
+            <div class="becoming-dot"></div>
+            <div class="becoming-item-text">
+              <span class="becoming-item-title">ליווי מלא · הריון, לידה, אחרי</span>
+              <span class="becoming-item-desc">את מוכנה לכל שלב. מהרגע שהאישה נכנסת להריון ועד שהיא מוצאת את עצמה כאמא.</span>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -815,34 +789,38 @@
       <div class="testi-grid">
         <div class="testi-card">
           <div class="testi-quote-mark">"</div>
-          <p class="testi-text">רונית לא רק לימדה אותי להיות דולה. היא לימדה אותי להיות נוכחת. זה הדבר הכי גדול שקיבלתי מההכשרה הזאת.</p>
+          <p class="testi-text">המפגשים בקורס הם כמו מים זכים וקרירים לאדמה חרבה. זה בכלל קורס שעוסק בחיבור עמוק — חיבור לעצמי, לעולם, לנשים, לרוח הגדולה. המקום הוא בית, והנלמד הוא תורת חיים.</p>
           <div class="testi-author">
-            <div class="testi-avatar">ש.מ</div>
+            <div class="testi-avatar">
+              <img src="https://ronitkopelis.co.il/wp-content/uploads/2023/05/פאביקון-150x150.png" alt="תמר רייס" />
+            </div>
             <div>
-              <div class="testi-name">שירה מגן</div>
-              <div class="testi-role">דולה, בוגרת 2021</div>
+              <div class="testi-name">תמר רייס</div>
+              <div class="testi-role">דולה, בוגרת הקורס</div>
             </div>
           </div>
         </div>
         <div class="testi-card">
           <div class="testi-quote-mark">"</div>
-          <p class="testi-text">ניסיתי קורסים אחרים. שום דבר לא מתקרב לרמה הזאת. הידע של רונית הוא לא ספרים — הוא חיים. והיא מעבירה אותו בצורה שנוגעת ממש בלב.</p>
+          <p class="testi-text">זכיתי לפגוש את רונית שהיא מורה גדולה לחיים. למדתי בקורס איך להכנס אל הקודש הזה באהבה, ברכות, בחמלה ובענווה גדולה. אמנם באתי לרכוש מקצוע, אבל זכיתי לחוויה משנת חיים.</p>
           <div class="testi-author">
-            <div class="testi-avatar">נ.ל</div>
+            <div class="testi-avatar">
+              <img src="https://ronitkopelis.co.il/wp-content/uploads/2023/05/cropped-פאביקון-150x150.png" alt="בוגרת הקורס" />
+            </div>
             <div>
-              <div class="testi-name">נעמה לוי</div>
-              <div class="testi-role">דולה, בוגרת 2022</div>
+              <div class="testi-name">תמר רייס</div>
+              <div class="testi-role">דולה, בוגרת הקורס</div>
             </div>
           </div>
         </div>
         <div class="testi-card">
           <div class="testi-quote-mark">"</div>
-          <p class="testi-text">הייתי מלאת ספקות לפני ההכשרה. היום אני מלווה לידות ויודעת שזה מה שנועדתי לעשות. רונית נתנה לי את הביטחון הזה.</p>
+          <p class="testi-text">כל שניה איתה תעניק לך כלים, ידע ועוצמה — לא רק כדולה, אלא כאישה לכל חייך. רונית מראה לך את הדרך לעולם הבינה הנשי האינסופי שבך.</p>
           <div class="testi-author">
-            <div class="testi-avatar">מ.כ</div>
+            <div class="testi-avatar" style="background:#D4C5B8; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:500; color:#6B5E54;">א.א</div>
             <div>
-              <div class="testi-name">מיה כהן</div>
-              <div class="testi-role">דולה, בוגרת 2023</div>
+              <div class="testi-name">אשרת אשרת</div>
+              <div class="testi-role">דולה, בוגרת הקורס</div>
             </div>
           </div>
         </div>
@@ -855,7 +833,7 @@
     <span class="eyebrow">הצעד הראשון</span>
     <h2 class="final-headline">אם הלב שלך כבר<br>בעולם הלידה —<br><em>אולי מצאת את מקומך</em>.</h2>
     <p class="final-sub">שיחה אישית. ללא התחייבות. רק אנחנו ושאלה אחת: מה את מחפשת?</p>
-    <a href="mailto:ronit@example.com" class="btn-light">קביעת שיחה אישית עם רונית</a>
+    <a href="https://wa.me/972528491616" target="_blank" class="btn-light">קביעת שיחה אישית עם רונית</a>
   </section>
 
   <!-- FOOTER -->
